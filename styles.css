@@ -226,6 +226,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  position: relative;
 }
 
 /* Logo */
@@ -1639,14 +1640,16 @@ a.contact-card:hover {
 
 /* --- FEEDBACK WIDGET --- */
 .feedback-btn-nav {
-  position: static;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   box-shadow: none;
   padding: 8px 14px;
   font-size: .82rem;
   background: var(--color-shore-pale);
   color: var(--color-shore-dark);
 }
-.feedback-btn-nav:hover { background: var(--color-shore); color: #fff; transform: none; }
+.feedback-btn-nav:hover { background: var(--color-shore); color: #fff; transform: translateX(-50%); }
 
 .feedback-btn {
   position: fixed;
