@@ -1638,11 +1638,22 @@ a.contact-card:hover {
 }
 
 /* --- FEEDBACK WIDGET --- */
+.feedback-btn-nav {
+  position: static;
+  box-shadow: none;
+  padding: 8px 14px;
+  font-size: .82rem;
+  background: var(--color-shore-pale);
+  color: var(--color-shore-dark);
+}
+.feedback-btn-nav:hover { background: var(--color-shore); color: #fff; transform: none; }
+
 .feedback-btn {
   position: fixed;
   bottom: 28px;
   right: 28px;
   z-index: 900;
+  display: none;
   display: flex;
   align-items: center;
   gap: 8px;
