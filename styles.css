@@ -1575,6 +1575,92 @@ a.contact-card:hover {
   .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 56px 20px 40px; }
 }
 
+/* --- FEEDBACK WIDGET --- */
+.feedback-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--color-shore);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: .88rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(74,124,116,.35);
+  transition: background .2s, transform .2s;
+}
+.feedback-btn:hover { background: var(--color-shore-dark); transform: translateY(-2px); }
+
+.feedback-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(42,37,32,.45);
+  align-items: center;
+  justify-content: center;
+}
+.feedback-modal.open { display: flex; }
+
+.feedback-modal-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px;
+  width: 100%;
+  max-width: 480px;
+  margin: 20px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+}
+.feedback-modal-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+.feedback-section-label {
+  font-size: .85rem;
+  color: var(--color-text-light);
+  margin-bottom: 18px;
+}
+.feedback-modal-box textarea {
+  width: 100%;
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  padding: 14px;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--color-text);
+  resize: vertical;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+.feedback-modal-box textarea:focus {
+  outline: none;
+  border-color: var(--color-shore);
+  box-shadow: 0 0 0 4px var(--color-shore-glow);
+}
+.feedback-send { width: 100%; justify-content: center; }
+.feedback-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+}
+.feedback-close:hover { color: var(--color-text); }
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

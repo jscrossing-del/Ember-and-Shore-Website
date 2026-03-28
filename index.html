@@ -49,7 +49,7 @@
         <p class="hero-body">There is a safe place to land, and your inner strength is still there. Ember &amp; Shore Therapy offers warm, grounded, evidence-based care for individuals, couples, and families ready to find their footing again.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">
-            <span>Schedule a Consultation</span>
+            <span>Get Started</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#services" class="btn btn-ghost">Explore Services</a>
@@ -377,19 +377,12 @@
         <div class="timeline-step">
           <div class="timeline-dot"><span>2</span></div>
           <div class="timeline-card">
-            <h3>Free Consultation</h3>
-            <p>We'll connect briefly to make sure we're a good fit and answer any questions you have about the process.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-dot"><span>3</span></div>
-          <div class="timeline-card">
             <h3>Intake Evaluation</h3>
             <p>Your first full session. We'll explore your history, goals, and needs to build a personalized care plan.</p>
           </div>
         </div>
         <div class="timeline-step">
-          <div class="timeline-dot"><span>4</span></div>
+          <div class="timeline-dot"><span>3</span></div>
           <div class="timeline-card">
             <h3>Begin Therapy</h3>
             <p>Regular sessions at a pace and frequency that works for you. You're never locked into a rigid schedule.</p>
@@ -424,7 +417,7 @@
             <span class="faq-icon"><span></span><span></span></span>
           </button>
           <div class="faq-answer">
-            <p>If you're asking the question, it probably is. Therapy isn't only for crisis — it's a space to grow, process, and feel more like yourself. A free consultation is a great low-pressure way to find out.</p>
+            <p>If you're asking the question, it probably is. Therapy isn't only for crisis — it's a space to grow, process, and feel more like yourself. Reach out and we'll help you figure out if it's the right fit.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -592,6 +585,85 @@
     </div>
   </footer>
 
+  <!-- FEEDBACK BUTTON -->
+  <button class="feedback-btn" id="feedbackBtn" aria-label="Send feedback">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Feedback</span>
+  </button>
+
+  <div class="feedback-modal" id="feedbackModal" aria-hidden="true">
+    <div class="feedback-modal-box">
+      <button class="feedback-close" id="feedbackClose" aria-label="Close">&times;</button>
+      <h3>Leave Feedback</h3>
+      <p class="feedback-section-label">Section: <strong id="feedbackSection">–</strong></p>
+      <textarea id="feedbackText" rows="5" placeholder="What would you like to change or improve here?"></textarea>
+      <button class="feedback-send btn btn-primary" id="feedbackSend">
+        <span>Send Feedback</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script>
+    // Feedback widget
+    const feedbackBtn = document.getElementById('feedbackBtn');
+    const feedbackModal = document.getElementById('feedbackModal');
+    const feedbackClose = document.getElementById('feedbackClose');
+    const feedbackSend = document.getElementById('feedbackSend');
+    const feedbackSection = document.getElementById('feedbackSection');
+    const feedbackText = document.getElementById('feedbackText');
+
+    const sections = [
+      { id: 'top', label: 'Header / Hero' },
+      { id: 'about', label: 'About' },
+      { id: 'who', label: 'Who We Help' },
+      { id: 'services', label: 'Services' },
+      { id: 'fees', label: 'Fees & Insurance' },
+      { id: 'expect', label: 'What to Expect' },
+      { id: 'faq', label: 'FAQ' },
+      { id: 'contact', label: 'Contact' },
+    ];
+
+    function getCurrentSection() {
+      let current = sections[0].label;
+      sections.forEach(s => {
+        const el = document.getElementById(s.id);
+        if (el && el.getBoundingClientRect().top <= 120) current = s.label;
+      });
+      return current;
+    }
+
+    feedbackBtn.addEventListener('click', () => {
+      feedbackSection.textContent = getCurrentSection();
+      feedbackText.value = '';
+      feedbackModal.classList.add('open');
+      feedbackModal.setAttribute('aria-hidden', 'false');
+      feedbackText.focus();
+    });
+
+    feedbackClose.addEventListener('click', () => {
+      feedbackModal.classList.remove('open');
+      feedbackModal.setAttribute('aria-hidden', 'true');
+    });
+
+    feedbackModal.addEventListener('click', e => {
+      if (e.target === feedbackModal) {
+        feedbackModal.classList.remove('open');
+        feedbackModal.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    feedbackSend.addEventListener('click', () => {
+      const text = feedbackText.value.trim();
+      if (!text) { feedbackText.focus(); return; }
+      const section = feedbackSection.textContent;
+      const subject = encodeURIComponent('Website Feedback — ' + section);
+      const body = encodeURIComponent('Section: ' + section + '\n\n' + text);
+      window.location.href = 'mailto:jscrossing@gmail.com?subject=' + subject + '&body=' + body;
+      feedbackModal.classList.remove('open');
+      feedbackModal.setAttribute('aria-hidden', 'true');
+    });
+  </script>
 </body>
 </html>
