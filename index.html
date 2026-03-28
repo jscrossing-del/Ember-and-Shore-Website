@@ -48,10 +48,10 @@
         <h1>You don't have to carry<br>your pain <em>alone</em> —<br>or forever.</h1>
         <p class="hero-body">There is a safe place to land, and your inner strength is still there. Ember &amp; Shore Therapy offers warm, grounded, evidence-based care for individuals, couples, and families ready to find their footing again.</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">
-            <span>Get Started</span>
+          <button class="btn btn-primary" id="contactModalBtn">
+            <span>Contact Me</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          </button>
           <a href="#services" class="btn btn-ghost">Explore Services</a>
         </div>
       </div>
@@ -585,6 +585,36 @@
     </div>
   </footer>
 
+  <!-- CONTACT MODAL -->
+  <div class="contact-modal" id="contactModal" aria-hidden="true">
+    <div class="contact-modal-box">
+      <button class="feedback-close" id="contactModalClose" aria-label="Close">&times;</button>
+      <h3>Get in Touch</h3>
+      <p class="feedback-section-label">Fill out the form below or call directly.</p>
+      <a href="tel:+16122321202" class="contact-modal-call">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        (612) 232-1202
+      </a>
+      <div class="contact-modal-divider"><span>or send a message</span></div>
+      <div class="form-group">
+        <label for="cm-name">Your Name</label>
+        <input type="text" id="cm-name" placeholder="First and last name" />
+      </div>
+      <div class="form-group">
+        <label for="cm-email">Email or Phone</label>
+        <input type="text" id="cm-email" placeholder="How should we reach you?" />
+      </div>
+      <div class="form-group">
+        <label for="cm-message">Message</label>
+        <textarea id="cm-message" rows="3" placeholder="What brings you here?"></textarea>
+      </div>
+      <button class="btn btn-primary feedback-send" id="contactModalSend">
+        <span>Send Message</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
   <!-- FEEDBACK BUTTON -->
   <button class="feedback-btn" id="feedbackBtn" aria-label="Send feedback">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -606,6 +636,39 @@
 
   <script src="script.js"></script>
   <script>
+    // Contact modal
+    const contactModalBtn = document.getElementById('contactModalBtn');
+    const contactModal = document.getElementById('contactModal');
+    const contactModalClose = document.getElementById('contactModalClose');
+    const contactModalSend = document.getElementById('contactModalSend');
+
+    contactModalBtn.addEventListener('click', () => {
+      contactModal.classList.add('open');
+      contactModal.setAttribute('aria-hidden', 'false');
+      document.getElementById('cm-name').focus();
+    });
+    contactModalClose.addEventListener('click', () => {
+      contactModal.classList.remove('open');
+      contactModal.setAttribute('aria-hidden', 'true');
+    });
+    contactModal.addEventListener('click', e => {
+      if (e.target === contactModal) {
+        contactModal.classList.remove('open');
+        contactModal.setAttribute('aria-hidden', 'true');
+      }
+    });
+    contactModalSend.addEventListener('click', () => {
+      const name = document.getElementById('cm-name').value.trim();
+      const contact = document.getElementById('cm-email').value.trim();
+      const message = document.getElementById('cm-message').value.trim();
+      if (!name || !message) { return; }
+      const subject = encodeURIComponent('New Inquiry from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nContact: ' + contact + '\n\n' + message);
+      window.location.href = 'mailto:jscrossing@gmail.com?subject=' + subject + '&body=' + body;
+      contactModal.classList.remove('open');
+      contactModal.setAttribute('aria-hidden', 'true');
+    });
+
     // Feedback widget
     const feedbackBtn = document.getElementById('feedbackBtn');
     const feedbackModal = document.getElementById('feedbackModal');
