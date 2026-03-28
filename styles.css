@@ -9,24 +9,24 @@
   --color-ember:         #C4622D;
   --color-ember-dark:    #A34D1F;
   --color-ember-light:   #E8906A;
-  --color-ember-pale:    #FCEEE6;
-  --color-ember-glow:    rgba(196, 98, 45, 0.12);
+  --color-ember-pale:    #FEF4EF;
+  --color-ember-glow:    rgba(196, 98, 45, 0.08);
 
   --color-shore:         #4A7C74;
   --color-shore-dark:    #365E58;
   --color-shore-light:   #7AADA6;
-  --color-shore-pale:    #E4F2F0;
-  --color-shore-glow:    rgba(74, 124, 116, 0.12);
+  --color-shore-pale:    #EEF7F6;
+  --color-shore-glow:    rgba(74, 124, 116, 0.08);
 
   /* Neutrals */
-  --color-cream:         #FFFCF8;
+  --color-cream:         #FFFFFF;
   --color-cream-dark:    #FBF5EE;
-  --color-sand:          #FBF4E9;
+  --color-sand:          #FDF9F5;
   --color-warm-gray:     #D4CAB8;
   --color-text:          #2A2520;
   --color-text-mid:      #5A5249;
   --color-text-light:    #7D7468;
-  --color-border:        #E0D8CC;
+  --color-border:        #EAE4DC;
   --color-white:         #FFFFFF;
 
   /* Typography */
@@ -336,12 +336,12 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   inset: 0;
   background:
     linear-gradient(165deg,
-      #FFF8F0 0%,
-      #FEF1E2 25%,
-      #FDEADB 45%,
-      #FCE8D8 65%,
-      #FDF2E5 82%,
-      #FFF7EE 100%);
+      #FFFFFF 0%,
+      #FEF9F5 25%,
+      #FDF4EE 45%,
+      #FEF6EF 65%,
+      #FEFAF6 82%,
+      #FFFFFF 100%);
   z-index: 0;
 }
 
@@ -350,7 +350,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.22;
+  opacity: 0.13;
   animation: float 20s ease-in-out infinite;
 }
 .hero-orb-1 {
