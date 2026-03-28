@@ -726,15 +726,29 @@
       }
     });
 
-    feedbackSend.addEventListener('click', () => {
+    feedbackSend.addEventListener('click', async () => {
       const text = feedbackText.value.trim();
       if (!text) { feedbackText.focus(); return; }
       const section = feedbackSection.textContent;
-      const subject = encodeURIComponent('Website Feedback — ' + section);
-      const body = encodeURIComponent('Section: ' + section + '\n\n' + text);
-      window.location.href = 'mailto:jscrossing@gmail.com?subject=' + subject + '&body=' + body;
-      feedbackModal.classList.remove('open');
-      feedbackModal.setAttribute('aria-hidden', 'true');
+      feedbackSend.disabled = true;
+      feedbackSend.querySelector('span').textContent = 'Sending…';
+      try {
+        await fetch('https://formspree.io/f/mojpjbwv', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ section, message: text })
+        });
+        feedbackSend.querySelector('span').textContent = 'Sent!';
+        setTimeout(() => {
+          feedbackModal.classList.remove('open');
+          feedbackModal.setAttribute('aria-hidden', 'true');
+          feedbackSend.disabled = false;
+          feedbackSend.querySelector('span').textContent = 'Send Feedback';
+        }, 1200);
+      } catch(e) {
+        feedbackSend.querySelector('span').textContent = 'Error — try again';
+        feedbackSend.disabled = false;
+      }
     });
   </script>
 </body>
