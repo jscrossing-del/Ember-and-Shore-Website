@@ -19,9 +19,9 @@
   --color-shore-glow:    rgba(74, 124, 116, 0.12);
 
   /* Neutrals */
-  --color-cream:         #FAF7F2;
-  --color-cream-dark:    #F3EDE3;
-  --color-sand:          #EDE5D8;
+  --color-cream:         #FFFCF8;
+  --color-cream-dark:    #FBF5EE;
+  --color-sand:          #FBF4E9;
   --color-warm-gray:     #D4CAB8;
   --color-text:          #2A2520;
   --color-text-mid:      #5A5249;
@@ -187,14 +187,15 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .btn-primary span, .btn-primary svg { position: relative; z-index: 1; }
 
 .btn-ghost {
-  color: rgba(255,255,255,.9);
-  border-color: rgba(255,255,255,.3);
+  color: var(--color-text-mid);
+  border-color: var(--color-border);
+  background: rgba(255,255,255,.7);
   backdrop-filter: blur(4px);
 }
 .btn-ghost:hover {
-  background: rgba(255,255,255,.12);
-  border-color: rgba(255,255,255,.6);
-  color: var(--color-white);
+  background: var(--color-white);
+  border-color: var(--color-shore-light);
+  color: var(--color-shore-dark);
 }
 
 .btn-sm { padding: 12px 24px; font-size: .82rem; }
@@ -258,16 +259,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   margin-top: 2px;
 }
 
-/* Hero logo state */
-.site-header:not(.scrolled) .logo-ember,
-.site-header:not(.scrolled) .logo-shore { color: var(--color-white); }
-.site-header:not(.scrolled) .logo-amp { color: rgba(255,255,255,.4); }
-.site-header:not(.scrolled) .logo-sub { color: rgba(255,255,255,.5); }
-.site-header:not(.scrolled) .logo-mark svg circle,
-.site-header:not(.scrolled) .logo-mark svg path { stroke: rgba(255,255,255,.7); }
-.site-header:not(.scrolled) .site-nav a { color: rgba(255,255,255,.85); }
-.site-header:not(.scrolled) .site-nav a:hover { color: var(--color-white); }
-.site-header:not(.scrolled) .nav-toggle span { background: var(--color-white); }
+/* Hero logo state — hero is now light, so use standard dark colors */
+.site-header:not(.scrolled) .logo-ember { color: var(--color-ember); }
+.site-header:not(.scrolled) .logo-shore { color: var(--color-shore); }
+.site-header:not(.scrolled) .logo-amp { color: var(--color-warm-gray); }
+.site-header:not(.scrolled) .logo-sub { color: var(--color-text-light); }
+.site-header:not(.scrolled) .site-nav a { color: var(--color-text-mid); }
+.site-header:not(.scrolled) .site-nav a:hover { color: var(--color-ember); }
+.site-header:not(.scrolled) .nav-toggle span { background: var(--color-text); }
 
 /* Nav */
 .site-nav ul {
@@ -337,12 +336,12 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   inset: 0;
   background:
     linear-gradient(165deg,
-      #3D6B63 0%,
-      #4D8A81 25%,
-      #5E9E94 45%,
-      #7A8A6A 65%,
-      #A07D5A 82%,
-      #9A5A38 100%);
+      #FFF8F0 0%,
+      #FEF1E2 25%,
+      #FDEADB 45%,
+      #FCE8D8 65%,
+      #FDF2E5 82%,
+      #FFF7EE 100%);
   z-index: 0;
 }
 
@@ -351,7 +350,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.4;
+  opacity: 0.22;
   animation: float 20s ease-in-out infinite;
 }
 .hero-orb-1 {
@@ -406,13 +405,13 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   font-weight: 600;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.6);
+  color: var(--color-ember);
   margin-bottom: 28px;
 }
 .eyebrow-line {
   display: block;
   width: 32px; height: 1px;
-  background: rgba(255,255,255,.3);
+  background: var(--color-ember-light);
 }
 
 .hero h1 {
@@ -420,7 +419,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   font-size: clamp(2.6rem, 5.5vw, 4.2rem);
   font-weight: 500;
   line-height: 1.12;
-  color: var(--color-white);
+  color: var(--color-text);
   margin-bottom: 28px;
   letter-spacing: -0.01em;
 }
@@ -435,7 +434,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .hero-body {
   font-size: 1.1rem;
   font-weight: 300;
-  color: rgba(255,255,255,.78);
+  color: var(--color-text-mid);
   max-width: 540px;
   margin-bottom: 44px;
   line-height: 1.85;
@@ -459,7 +458,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   gap: 10px;
   font-size: .82rem;
   font-weight: 500;
-  color: rgba(255,255,255,.65);
+  color: var(--color-text-mid);
 }
 .hero-badge svg { color: var(--color-ember-light); opacity: 0.8; flex-shrink: 0; }
 
@@ -787,27 +786,27 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 /* Featured card */
 .service-card-featured {
-  background: linear-gradient(160deg, #5E9E94 0%, #4D8A81 50%, #3D6B63 100%);
-  color: var(--color-white);
-  border-color: transparent;
+  background: linear-gradient(160deg, var(--color-ember-pale) 0%, #FDEADB 50%, #FCE3CF 100%);
+  color: var(--color-text);
+  border-color: rgba(196,98,45,.15);
   box-shadow: var(--shadow-md);
 }
 .service-card-featured .service-card-accent {
   background: linear-gradient(90deg, var(--color-ember-light), var(--color-ember));
   opacity: 1;
 }
-.service-card-featured:hover { box-shadow: var(--shadow-xl), var(--shadow-glow-shore); }
-.service-card-featured p { color: rgba(255,255,255,.75); }
-.service-card-featured .service-for { color: rgba(255,255,255,.55) !important; }
+.service-card-featured:hover { box-shadow: var(--shadow-xl), var(--shadow-glow-ember); }
+.service-card-featured p { color: var(--color-text-mid); }
+.service-card-featured .service-for { color: var(--color-ember) !important; }
 .service-card-featured .price-tag {
-  border-color: rgba(255,255,255,.2) !important;
-  background: rgba(255,255,255,.08) !important;
+  border-color: rgba(196,98,45,.2) !important;
+  background: rgba(255,255,255,.6) !important;
 }
-.service-card-featured .price-time { color: rgba(255,255,255,.6) !important; }
-.service-card-featured .price-amount { color: var(--color-white) !important; }
+.service-card-featured .price-time { color: var(--color-text-light) !important; }
+.service-card-featured .price-amount { color: var(--color-ember-dark) !important; }
 .service-card-featured .service-icon-wrap {
-  background: rgba(255,255,255,.12);
-  color: var(--color-ember-light);
+  background: rgba(255,255,255,.7);
+  color: var(--color-ember);
 }
 
 .service-badge {
