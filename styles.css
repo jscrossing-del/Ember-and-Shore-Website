@@ -1644,10 +1644,12 @@ a.contact-card:hover {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: none;
-  padding: 8px 14px;
-  font-size: .82rem;
+  padding: 5px 12px;
+  font-size: .75rem;
   background: var(--color-shore-pale);
   color: var(--color-shore-dark);
+  width: auto;
+  border-radius: 100px;
 }
 .feedback-btn-nav:hover { background: var(--color-shore); color: #fff; transform: translateX(-50%); }
 
