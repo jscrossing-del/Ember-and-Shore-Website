@@ -238,7 +238,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .logo:hover { opacity: 0.8; }
 .logo-mark { flex-shrink: 0; display: flex; }
-.logo-img { height: 60px; width: auto; object-fit: contain; }
+.logo-img { height: 80px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
 .logo-text { display: flex; flex-direction: column; }
 .logo-name {
   font-family: var(--font-display);
@@ -1738,6 +1738,26 @@ a.contact-card:hover {
   padding: 4px 8px;
 }
 .feedback-close:hover { color: var(--color-text); }
+
+/* --- MEET LEA --- */
+.meet-lea { background: var(--color-sand); }
+.meet-lea-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 64px;
+  align-items: center;
+}
+.meet-lea-image-wrap { position: relative; }
+.meet-lea-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+@media (max-width: 768px) {
+  .meet-lea-grid { grid-template-columns: 1fr; gap: 36px; }
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
