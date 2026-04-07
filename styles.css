@@ -614,9 +614,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   z-index: 0;
 }
 .about-decor-1 {
-  width: 100%; height: 100%;
-  top: 16px; left: 16px;
-  border: 2px solid var(--color-shore-pale);
+  display: none;
 }
 .about-decor-2 {
   width: 80px; height: 80px;
