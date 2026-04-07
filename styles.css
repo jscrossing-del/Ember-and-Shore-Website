@@ -394,6 +394,24 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: relative;
   z-index: 2;
   padding: 140px 28px 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-image-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-photo {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  display: block;
 }
 
 .hero-text { max-width: 680px; }
@@ -1552,10 +1570,11 @@ a.contact-card:hover {
   .site-header:not(.scrolled) .nav-toggle[aria-expanded="true"] span { background: var(--color-text); }
 
   .hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
-  .hero-content { padding: 120px 20px 140px; }
+  .hero-content { padding: 120px 20px 140px; grid-template-columns: 1fr; }
+  .hero-image-wrap { order: -1; }
+  .hero-photo { max-width: 100%; aspect-ratio: 16/9; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { text-align: center; }
-  .hero-badges { flex-direction: column; gap: 12px; }
 
   .brand-meaning { padding: 56px 0; }
   .brand-cards { grid-template-columns: 1fr; max-width: 400px; }
