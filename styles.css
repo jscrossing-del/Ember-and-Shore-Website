@@ -401,8 +401,16 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .hero-image-wrap {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.hero-photo-credit {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  margin-top: 8px;
+  letter-spacing: 0.02em;
 }
 .hero-photo {
   width: 100%;
