@@ -128,7 +128,10 @@
   <section class="about section" id="about">
     <div class="container about-grid">
       <div class="about-image-wrap">
-        <img src="IMG_6086.jpg" alt="Ember & Shore Therapy" class="meet-lea-photo" />
+        <div class="photo-protected">
+          <img src="IMG_6086.jpg" alt="Ember & Shore Therapy" class="meet-lea-photo" />
+          <span class="photo-watermark">&copy; Ember &amp; Shore Therapy, PLLC</span>
+        </div>
         <div class="about-decor about-decor-1"></div>
         <div class="about-decor about-decor-2"></div>
       </div>
@@ -472,7 +475,10 @@
   <section class="meet-lea section" id="meet-lea">
     <div class="container meet-lea-grid">
       <div class="meet-lea-image-wrap">
-        <img src="IMG_7049.jpg" alt="Lea Semler, LMFT" class="meet-lea-photo" />
+        <div class="photo-protected">
+          <img src="IMG_7049.jpg" alt="Lea Semler, LMFT" class="meet-lea-photo" />
+          <span class="photo-watermark">&copy; Ember &amp; Shore Therapy, PLLC</span>
+        </div>
       </div>
       <div class="meet-lea-text">
         <p class="section-label">Meet Your Therapist</p>
@@ -518,66 +524,13 @@
     </div>
   </footer>
 
-  <!-- CONTACT MODAL -->
-  <div class="contact-modal" id="contactModal" aria-hidden="true">
-    <div class="contact-modal-box">
-      <button class="feedback-close" id="contactModalClose" aria-label="Close">&times;</button>
-      <h3>Get in Touch</h3>
-      <p class="feedback-section-label">Fill out the form and we'll be in touch.</p>
-      <div class="form-group">
-        <label for="cm-name">Your Name</label>
-        <input type="text" id="cm-name" placeholder="First and last name" />
-      </div>
-      <div class="form-group">
-        <label for="cm-email">Email or Phone</label>
-        <input type="text" id="cm-email" placeholder="How should we reach you?" />
-      </div>
-      <div class="form-group">
-        <label for="cm-message">Message</label>
-        <textarea id="cm-message" rows="3" placeholder="What brings you here?"></textarea>
-      </div>
-      <button class="btn btn-primary feedback-send" id="contactModalSend">
-        <span>Send Message</span>
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-  </div>
-
   <script src="script.js"></script>
   <script>
-    // Contact modal
-    const contactModalBtn = document.getElementById('contactModalBtn');
-    const contactModal = document.getElementById('contactModal');
-    const contactModalClose = document.getElementById('contactModalClose');
-    const contactModalSend = document.getElementById('contactModalSend');
-
-    contactModalBtn.addEventListener('click', () => {
-      contactModal.classList.add('open');
-      contactModal.setAttribute('aria-hidden', 'false');
-      document.getElementById('cm-name').focus();
+    // Disable right-click on images
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('contextmenu', e => e.preventDefault());
+      img.setAttribute('draggable', 'false');
     });
-    contactModalClose.addEventListener('click', () => {
-      contactModal.classList.remove('open');
-      contactModal.setAttribute('aria-hidden', 'true');
-    });
-    contactModal.addEventListener('click', e => {
-      if (e.target === contactModal) {
-        contactModal.classList.remove('open');
-        contactModal.setAttribute('aria-hidden', 'true');
-      }
-    });
-    contactModalSend.addEventListener('click', () => {
-      const name = document.getElementById('cm-name').value.trim();
-      const contact = document.getElementById('cm-email').value.trim();
-      const message = document.getElementById('cm-message').value.trim();
-      if (!name || !message) { return; }
-      const subject = encodeURIComponent('New Inquiry from ' + name);
-      const body = encodeURIComponent('Name: ' + name + '\nContact: ' + contact + '\n\n' + message);
-      window.location.href = 'mailto:Lea@emberandshoretherapy.com?subject=' + subject + '&body=' + body;
-      contactModal.classList.remove('open');
-      contactModal.setAttribute('aria-hidden', 'true');
-    });
-
   </script>
 </body>
 </html>
