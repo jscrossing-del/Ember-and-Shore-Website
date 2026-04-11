@@ -1555,9 +1555,7 @@ a.contact-card:hover {
   .site-nav {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(250, 247, 242, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgb(250, 247, 242);
     padding: 100px 32px 40px;
     transform: translateY(-100%);
     opacity: 0;
