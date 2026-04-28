@@ -282,6 +282,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   padding: 8px 16px;
   border-radius: var(--radius-full);
   transition: all var(--transition);
+  white-space: nowrap;
 }
 .site-nav a:hover {
   color: var(--color-ember);
