@@ -6,7 +6,7 @@ Static single-page website for **Ember & Shore Therapy, PLLC** — a licensed ma
 ## Files
 - `index.html` — entire site, one page
 - `styles.css` — all styles
-- `script.js` — mobile nav toggle, FAQ accordion, contact form, scroll effects
+- `script.js` — mobile nav toggle, FAQ accordion, scroll effects (no contact form — see Contact section)
 - `EmberShoreLogo.png`, `favicon.png`, `hero-bg.jpg`, `IMG_*.jpg` — images
 
 ## Page sections (in order)
@@ -18,7 +18,7 @@ Static single-page website for **Ember & Shore Therapy, PLLC** — a licensed ma
 6. **Services** — individual, couples, family therapy
 7. **Fees & Insurance** — rates and accepted insurance
 8. **FAQ** — accordion
-9. **Contact** — contact form
+9. **Contact** — email link + Headway scheduling (no web form, by design: avoids routing sensitive inquiries through a non-HIPAA third-party form service)
 10. **Meet Lea** — therapist bio
 
 ## Scheduling link

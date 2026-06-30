@@ -4,12 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ember & Shore Therapy, PLLC | Licensed Marriage & Family Therapy – Minnesota</title>
-  <meta name="description" content="Ember & Shore Therapy offers compassionate, trauma-informed individual, couples, and family therapy in Minnesota. Telehealth and in-person sessions available." />
+  <meta name="description" content="Ember & Shore Therapy offers compassionate, trauma-informed individual, couples, and family therapy in Blaine, Minnesota. Telehealth and in-person sessions available." />
+  <link rel="canonical" href="https://www.emberandshoretherapy.com/" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ember & Shore Therapy, PLLC" />
+  <meta property="og:title" content="Ember & Shore Therapy, PLLC | Marriage & Family Therapy in Minnesota" />
+  <meta property="og:description" content="Compassionate, trauma-informed individual, couples, and family therapy in Blaine, Minnesota. Telehealth and in-person sessions available." />
+  <meta property="og:url" content="https://www.emberandshoretherapy.com/" />
+  <meta property="og:image" content="https://www.emberandshoretherapy.com/hero-bg.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ember & Shore Therapy, PLLC | Marriage & Family Therapy in Minnesota" />
+  <meta name="twitter:description" content="Compassionate, trauma-informed individual, couples, and family therapy in Blaine, Minnesota." />
+  <meta name="twitter:image" content="https://www.emberandshoretherapy.com/hero-bg.jpg" />
+
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Structured data: practice info for local search & rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": "https://www.emberandshoretherapy.com/#practice",
+    "name": "Ember & Shore Therapy, PLLC",
+    "description": "Licensed marriage & family therapy practice in Blaine, Minnesota offering trauma-informed individual, couples, and family therapy. Telehealth and in-person sessions available.",
+    "url": "https://www.emberandshoretherapy.com/",
+    "logo": "https://www.emberandshoretherapy.com/EmberShoreLogo.png",
+    "image": "https://www.emberandshoretherapy.com/hero-bg.jpg",
+    "email": "Lea@emberandshoretherapy.com",
+    "priceRange": "$$",
+    "medicalSpecialty": "Psychiatric",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12760 Aberdeen St NE, Suite 102",
+      "addressLocality": "Blaine",
+      "addressRegion": "MN",
+      "postalCode": "55449",
+      "addressCountry": "US"
+    },
+    "areaServed": { "@type": "State", "name": "Minnesota" },
+    "founder": {
+      "@type": "Person",
+      "name": "Lea Semler",
+      "jobTitle": "Licensed Marriage & Family Therapist (LMFT)"
+    },
+    "availableService": [
+      { "@type": "MedicalTherapy", "name": "Individual Therapy" },
+      { "@type": "MedicalTherapy", "name": "Couples Therapy" },
+      { "@type": "MedicalTherapy", "name": "Family Therapy" },
+      { "@type": "MedicalTherapy", "name": "Clinical Supervision" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you offer telehealth sessions?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. All services are available via telehealth or in-person. Telehealth sessions are conducted through a secure, HIPAA-compliant platform, so you can connect from the comfort of your home anywhere in Minnesota." }
+      },
+      {
+        "@type": "Question",
+        "name": "What ages do you work with?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We work with children, adolescents, adults, and seniors, as well as couples and families. If you're unsure whether we serve your specific situation, don't hesitate to reach out." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does therapy take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "This varies widely. Some clients benefit from a focused 8–12 session series; others value ongoing support over a longer period. We'll regularly check in about your progress and goals together." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is everything I share confidential?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything shared in therapy is strictly confidential under HIPAA and Minnesota law, with limited exceptions (such as immediate safety concerns). Full details are provided during intake." }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I'm in crisis?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ember & Shore is an outpatient practice and is not a crisis service. If you are in crisis, please call or text 988 (Suicide & Crisis Lifeline), text HOME to 741741 (Crisis Text Line), or go to your nearest emergency room." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -406,47 +490,6 @@
           </a>
         </div>
         <p class="contact-note">All communication is kept strictly confidential.</p>
-      </div>
-      <div class="contact-form-wrap">
-        <form class="contact-form" id="contact-form" novalidate>
-          <h3>Send a Message</h3>
-          <p class="form-subtitle">We'll respond within one business day.</p>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="name" name="name" required placeholder="First and last name" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" required placeholder="you@example.com" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number <span class="optional">(optional)</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="(612) 555-0100" />
-          </div>
-          <div class="form-group">
-            <label for="service">I'm interested in&hellip;</label>
-            <select id="service" name="service">
-              <option value="">Select a service</option>
-              <option value="individual">Individual Therapy</option>
-              <option value="couples">Couples Therapy</option>
-              <option value="family">Family Therapy</option>
-              <option value="intake">Intake Evaluation</option>
-              <option value="other">General Question</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message <span aria-hidden="true">*</span></label>
-            <textarea id="message" name="message" required rows="5" placeholder="Tell us a little about what brings you here&hellip;"></textarea>
-          </div>
-          <p class="form-privacy">Your message is confidential and will never be shared. By submitting, you agree to be contacted by Ember &amp; Shore Therapy, PLLC.</p>
-          <button type="submit" class="btn btn-primary btn-full">
-            <span>Send Message</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="form-success" id="form-success" aria-live="polite"></div>
-        </form>
       </div>
     </div>
   </section>

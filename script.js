@@ -74,8 +74,7 @@
     '.fees-card':            'reveal',
     '.timeline-step':        'reveal',
     '.faq-item':             'reveal',
-    '.contact-info':         'reveal-left',
-    '.contact-form-wrap':    'reveal-right',
+    '.contact-info':         'reveal',
   };
 
   const allRevealEls = [];
@@ -117,37 +116,10 @@
 
   allRevealEls.forEach(el => observer.observe(el));
 
-  // --- Contact form ---
-  const form    = document.getElementById('contact-form');
-  const success = document.getElementById('form-success');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const data = new FormData(form);
-
-    const name    = data.get('name')?.trim();
-    const email   = data.get('email')?.trim();
-    const message = data.get('message')?.trim();
-
-    if (!name || !email || !message) {
-      success.style.color = 'var(--color-ember)';
-      success.textContent = 'Please fill in all required fields.';
-      return;
-    }
-
-    const submitBtn = form.querySelector('[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.querySelector('span').textContent = 'Sending…';
-
-    // Simulate submission — replace with real endpoint
-    setTimeout(() => {
-      success.style.color = 'var(--color-shore)';
-      success.textContent = 'Message sent! We\'ll be in touch within one business day.';
-      form.reset();
-      submitBtn.disabled = false;
-      submitBtn.querySelector('span').textContent = 'Send Message';
-    }, 1400);
-  });
+  // --- Contact ---
+  // No web form by design: prospective clients reach out via the email link or
+  // book through Headway (HIPAA-compliant). Avoids routing sensitive messages
+  // through a non-HIPAA third-party form service.
 
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

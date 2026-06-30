@@ -1,0 +1,8 @@
+# Local backups (full-res image originals — do not deploy)
+_image-originals/
+
+# macOS
+.DS_Store
+
+# Local tooling
+.claude/
